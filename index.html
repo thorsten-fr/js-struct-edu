@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>js-struct-edu – Struktogramm aus JavaScript</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="src/css/style.css" />
+  <link rel="stylesheet" href="src/css/editor.css" />
+  <link rel="stylesheet" href="src/css/struktogramm.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div>
+      <h1>js-struct-edu</h1>
+      <span>JavaScript → Struktogramm (Unterrichtsversion)</span>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <!-- Linke Spalte: Editor -->
+    <section class="column column-left">
+      <header class="column-header">
+        <h2>Code (JavaScript)</h2>
+      </header>
+
+      <div class="toolbar">
+        <button id="btnGenerate">Struktogramm erzeugen</button>
+        <button id="btnExample">Beispiel einfügen</button>
+        <button id="btnExportPng">Struktogramm als PNG speichern</button>
+        <span id="status" class="status"></span>
+      </div>
+
+      <div id="editorContainer">
+        <div id="editor"></div>
+      </div>
+    </section>
+
+    <!-- Rechte Spalte: Struktogramm -->
+    <section class="column column-right">
+      <header class="column-header">
+        <h2>Struktogramm</h2>
+      </header>
+      <div id="diagramArea">
+        <div id="diagramRoot"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Libraries per CDN -->
+  <!-- Monaco AMD Loader -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.52.0/min/vs/loader.min.js"></script>
+
+  <!-- Acorn: JavaScript Parser -->
+  <script src="https://cdn.jsdelivr.net/npm/acorn@8.11.3/dist/acorn.min.js"></script>
+
+
+  <!-- html2canvas: für PNG-Export -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
+  <!-- Eigene Skripte -->
+  <script src="src/js/parser.js"></script>
+  <script src="src/js/renderer.js"></script>
+  <script src="src/js/editor.js"></script>
+  <script src="src/js/app.js"></script>
+</body>
+</html>
